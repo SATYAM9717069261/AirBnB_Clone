@@ -196,6 +196,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  devise (~> 4.8)
   devise_token_auth (~> 1.2)
   faker
   pg (~> 1.1)

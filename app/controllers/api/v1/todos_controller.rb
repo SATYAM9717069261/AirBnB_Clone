@@ -1,4 +1,6 @@
 class Api::V1::TodosController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @todos=Todo.all
         render json: @todos
@@ -43,5 +45,5 @@ class Api::V1::TodosController < ApplicationController
     def valid_params
         params.require(:todo).permit(:title,:is_completed,:status)
     end
-    
+
 end

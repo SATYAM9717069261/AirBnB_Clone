@@ -15,5 +15,7 @@ statuses = %w[start backlog completed]
         is_completed: [true,false].sample
     )
 end
+User.destroy_all
+user1 = User.create!(email:"dev@gmail.com", password: "dev@gmail.com", password_confirmation: "dev@gmail.com")
 
 puts "Created #{Todo.count}"
