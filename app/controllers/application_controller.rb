@@ -1,2 +1,2 @@
-class ApplicationController < ActionController::Base # API
+class ApplicationController < ActionController::API
 end
