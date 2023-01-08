@@ -9,9 +9,9 @@
 Todo.destroy_all
 statuses = %w[start backlog completed]
 20.times do |index|
-    Todo,create!(
-        title: Facker::Movie.title,
-        status: statuses[1+rand(status.count)]
+    Todo.create!(
+        title: Faker::Movie.title,
+        status: statuses[1+rand(statuses.count)],
         is_completed: [true,false].sample
     )
 end
