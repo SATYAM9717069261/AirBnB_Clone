@@ -14,7 +14,7 @@ class Api::V1::TodosController < ApplicationController
         if @todo.save
             render json: @todo, status: 200
         else
-            render json: @todo.error, status: : unprocessable_entity
+            render json: @todo.error, status: :unprocessable_entity
         end
     end
 
@@ -37,4 +37,11 @@ class Api::V1::TodosController < ApplicationController
             render json: {error: "Can't Destroy"}, status:500
         end
     end
+
+    private
+
+    def valid_params
+        params.require(:todo).permit(:title,:is_completed,:status)
+    end
+    
 end
